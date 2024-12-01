@@ -3,16 +3,18 @@ import requests
 import pandas as pd
 import streamlit as st
 
+
 st.set_page_config(layout = 'wide')
 #inserindo o titulo
 st.title('Monitoramento das Proposições Legislativas da Câmara dos Deputados')
-st.title('Tema: **Mineração e Ações Climáticas**')
+st.title('Tema: **Petróleo, Gás e Biocombustíveis**')
 
 
 st.text("São acompanhados os PLs, PLPs, PECs e Requerimentos")
 st.text("que apresentaram alguma tramitação nos ultimos 7 dias")
 
-st.text('Os temas em monitoramento são:"minerais", "mineração", "clima", "ambient", "hidrogênio", "carbono", "data center",  "transição energética"')
+st.text('Os temas em monitoramento são: "gás", "petróleo", "biocombust", "etanol", "biometano", "SAF", "diesel", "transição energética"')
+
 
 # Definir a URL da API para o endpoint de projetos
 url = "https://dadosabertos.camara.leg.br/api/v2/proposicoes"
@@ -30,7 +32,7 @@ params = {
 }
 
 # Definir as palavras-chave que deseja filtrar na ementa dos projetos
-palavras_chave = ["minerais", "mineração", "clima", "ambient", "hidrogênio", "carbono", "data center",  "transição energética"]
+palavras_chave = ["gás", "petróleo", "biocombust", "etanol", "biometano", "SAF", "diesel", "transição energética"]
 
 # Fazer requisições para todas as páginas de resultados
 projetos = []
