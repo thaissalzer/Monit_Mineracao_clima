@@ -15,8 +15,6 @@ st.text("que apresentaram alguma tramitação nos ultimos 7 dias")
 st.text('Os temas em monitoramento são:"minerais", "mineração", "clima", "ambient", "hidrogênio", "carbono", "data center",  "transição energética"')
 
 # Definir a URL da API para o endpoint de projetos
-
-# Definir a URL da API para o endpoint de projetos
 url = "https://dadosabertos.camara.leg.br/api/v2/proposicoes"
 
 # Definir os parâmetros da requisição
