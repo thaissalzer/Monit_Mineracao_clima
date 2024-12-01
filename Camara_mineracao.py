@@ -15,10 +15,12 @@ st.text("que apresentaram alguma tramitação nos ultimos 7 dias")
 st.text('Os temas em monitoramento são:"minerais", "mineração", "clima", "ambient", "hidrogênio", "carbono", "data center",  "transição energética"')
 
 # Definir a URL da API para o endpoint de projetos
+
+# Definir a URL da API para o endpoint de projetos
 url = "https://dadosabertos.camara.leg.br/api/v2/proposicoes"
 
 # Definir os parâmetros da requisição
-data_inicio = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+data_inicio = (datetime.datetime.now() - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
 data_fim = datetime.datetime.now().strftime("%Y-%m-%d")
 params = {
     "dataInicio": data_inicio,
@@ -59,7 +61,7 @@ while True:
         print("Erro ao fazer requisição para a API:", response.status_code)
         break
 
-# Adicionar a situação de tramitação
+# Adicionar a situação de tramitação e data da última movimentação
 token = "seu_token_de_acesso_aqui"  # Substituir pelo seu token de acesso válido
 for proposicao in projetos:
     id_proposicao = proposicao['id']
